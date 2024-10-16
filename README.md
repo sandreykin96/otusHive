@@ -1,4 +1,4 @@
-Скачиваем данные по проданным машинам со стран персидского залива с [Ссылка в kaggle][https://www.kaggle.com/datasets/willianoliveiragibin/cars-yallamotors?resource=download]
+Скачиваем данные по проданным машинам со стран персидского залива с [Ссылка в kaggle](https://www.kaggle.com/datasets/willianoliveiragibin/cars-yallamotors?resource=download)
 
 ```ls```
 –hadoop-2.7.4  hive
