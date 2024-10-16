@@ -124,9 +124,9 @@ WHERE cylinder < 4
 GROUP  BY brand, cylinder 
 ```
 Отмечаем то что Geely продало целых 4 автомобиля с количеством цилиндров меньше четырех
-1. audi	3	25
-2. bmw	3	19
-3. citroen	3	6
-4. ds	3	2
-5. ford	3	8
-6. geely	3	4
+| audi	| 3 |	25 |
+| bmw	      | 3 | 19 | 
+| citroen	| 3 |	6  |
+|ds         | 3 | 2  |
+|ford 	|3  |	8  |
+|geely	|3  | 4  |
