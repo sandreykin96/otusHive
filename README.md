@@ -1,17 +1,17 @@
 Скачиваем данные по проданным машинам со стран персидского залива с https://www.kaggle.com/datasets/willianoliveiragibin/cars-yallamotors?resource=download
 
-ls
+```ls```
 –hadoop-2.7.4  hive
 
 Создаем директорию для хранения данных по авто
 
-hdfs dfs -mkdir /user/hive/warehouse/cars
+```hdfs dfs -mkdir /user/hive/warehouse/cars```
 
 Копируем в hdfs.
-hdfs dfs -put cars.csv /user/hive/warehouse/cars 
+```hdfs dfs -put cars.csv /user/hive/warehouse/cars ```
 
 Проверяем сработало ли
-hdfs dfs -ls /user/hive/warehouse/cars
+```hdfs dfs -ls /user/hive/warehouse/cars```
 Found 1 items
 -rw-r--r--   3 root supergroup     547376 2024-10-14 21:21 /user/hive/warehouse/cars/cars.csv
 
@@ -19,14 +19,14 @@ Found 1 items
 hive
 
 Убеждаемся что все работает
-hive> show databases;
+hive> ```show databases;```
 OK
 
-hive> show tables;
-hive> create database otus;
+hive> ```show tables;```
+hive> ```create database otus;```
 
 Создаем БД otus
-hive> create database otus;
+hive> ```create database otus;```
 
 Переходим в dbeaver, видимо что оно действительно существует 
 
