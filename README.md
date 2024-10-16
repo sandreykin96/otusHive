@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS powerfull_aston_martin_cars AS
 select * from otus.cars
 WHERE brand = 'aston-martin'  
 ORDER BY horse_power desc
- LIMIT 10
+LIMIT 10
 ```
 
 Убедимся что все создано корректно 
