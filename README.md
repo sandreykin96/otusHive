@@ -1,7 +1,7 @@
 Скачиваем данные по проданным машинам со стран персидского залива с [Ссылка в kaggle](https://www.kaggle.com/datasets/willianoliveiragibin/cars-yallamotors?resource=download)
 
 ```ls```
-–hadoop-2.7.4  hive
+> hadoop-2.7.4  hive
 
 Создаем директорию для хранения данных по авто
 
@@ -12,15 +12,15 @@
 
 Проверяем сработало ли
 ```hdfs dfs -ls /user/hive/warehouse/cars```
-Found 1 items
--rw-r--r--   3 root supergroup     547376 2024-10-14 21:21 /user/hive/warehouse/cars/cars.csv
+> Found 1 items
+> -rw-r--r--   3 root supergroup     547376 2024-10-14 21:21 /user/hive/warehouse/cars/cars.csv
 
 Переходим в хайв
 ```hive```
 
 Убеждаемся что все работает
 hive> ```show databases;```
-OK
+> OK
 
 hive> ```show tables;```
 hive> ```create database otus;```
