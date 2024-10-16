@@ -31,7 +31,7 @@ hive> create database otus;
 Переходим в dbeaver, видимо что оно действительно существует 
 
 Создаем таблицу с автомобилями.
-
+```sql
 CREATE EXTERNAL TABLE otus.cars
       (car_name STRING,
        price STRING,
@@ -53,20 +53,24 @@ CREATE EXTERNAL TABLE otus.cars
       );
 
 select * from otus.cars;
-
+```
 Создадим таблицу которая хранит 10 самых мощных автомобилей от марки Aston Martin
 
+```sql
 CREATE TABLE IF NOT EXISTS powerfull_aston_martin_cars AS 
 select * from otus.cars
 WHERE brand = 'aston-martin'  
 ORDER BY horse_power desc
  LIMIT 10
+```
 
 Убедимся что все создано корректно 
+```sql
 select * from default.powerfull_aston_martin_cars
+```
 
 Создадим витрину которая будет отображать бренды выпускающие в среднем самые быстрые автомобили 
-
+```sql
 CREATE TABLE IF NOT EXISTS average_top_speed_brands AS 
 select brand, AVG(top_speed) as avg_top_speed from otus.cars 
 GROUP BY brand
@@ -75,6 +79,8 @@ ORDER BY avg_top_speed DESC
 
 select * from default.average_top_speed_brands
 LIMIT 5
+```
+
 Получаем любопытный ответ
 
 ferrari	419.375
@@ -84,13 +90,16 @@ lamborghini	334.7142857142857
 mclaren	329.7741935483871
 
 Создадим витрину которая будет содержать количество проданных машин в разрезе брендов
+```sql
 CREATE TABLE IF NOT EXISTS sold_cars_by_brands AS 
 select brand, COUNT(*)  as count_of_cars from otus.cars 
 GROUP BY brand
 ORDER BY count_of_cars DESC  
+```
 
-Витрина которая покажет самые популярные бренды в катаре 
+Витрина которая покажет самые популярные бренды в катаре
 
+```sql
 CREATE TABLE IF NOT EXISTS top_brands_qatar AS 
 select brand, country,  COUNT(*)  as count_of_cars from otus.cars 
 WHERE  country  = 'qatar'
@@ -99,7 +108,7 @@ ORDER BY count_of_cars DESC
 LIMIT 5
 
 SELECT  * FROM top_brands_qatar
-
+```
 Видим то что в топе немецкая тройка, а также 2 бренда из Японии.
 mercedes-benz	qatar	99
 bmw	qatar	87
@@ -108,12 +117,12 @@ toyota	qatar	54
 nissan	qatar	53
 
 Создадим витрину которая показывает бренды продававшие машины с количеством цилиндров меньше четырех
-
+```sql
 CREATE TABLE IF NOT EXISTS less_than_three_cylynder_cars AS 
 select brand, cylinder,  COUNT(*) from otus.cars 
 WHERE cylinder < 4
 GROUP  BY brand, cylinder 
-
+```
 Отмечаем то что Geely продало целых 4 автомобиля с количеством цилиндров меньше четырех
 audi	3	25
 bmw	3	19
