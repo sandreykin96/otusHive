@@ -11,7 +11,7 @@ hdfs dfs -mkdir /user/hive/warehouse/cars
 hdfs dfs -put cars.csv /user/hive/warehouse/cars 
 
 Проверяем сработало ли
-# hdfs dfs -ls /user/hive/warehouse/cars
+hdfs dfs -ls /user/hive/warehouse/cars
 Found 1 items
 -rw-r--r--   3 root supergroup     547376 2024-10-14 21:21 /user/hive/warehouse/cars/cars.csv
 
